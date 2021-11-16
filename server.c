@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 00:20:51 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/10/07 00:42:28 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/11/14 23:34:40 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,20 +89,16 @@ void	print_pid(int pid)
 int	main(void)
 {
 	struct sigaction	sigusr1;
-	struct sigaction	sigusr2;
-	int					ret;
 	int					pid;
 
-	ret = -1;
 	pid = getpid();
 	print_pid(pid);
 	sigusr1.sa_handler = &byte_to_char;
-	sigusr2.sa_handler = &byte_to_char;
-	while (ret == -1)
+	while (1)
 	{
 		sigaction(SIGUSR1, &sigusr1, NULL);
-		sigaction(SIGUSR2, &sigusr2, NULL);
-		ret = pause();
+		sigaction(SIGUSR2, &sigusr1, NULL);
+		pause();
 	}
 	return (0);
 }

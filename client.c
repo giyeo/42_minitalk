@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpaulino <rpaulino@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 00:20:57 by rpaulino          #+#    #+#             */
-/*   Updated: 2021/10/16 11:44:17 by rpaulino         ###   ########.fr       */
+/*   Updated: 2021/11/14 22:40:56 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ unsigned char	char_to_byte(unsigned char a, int pid)
 			x += 1;
 			kill(pid, SIGUSR2);
 		}
-		usleep(1000);
+		usleep(600);
 	}
 	return (x);
 }
